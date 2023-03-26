@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MMRA:API xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:MMRA="mymetamodel2"
+    xsi:schemaLocation="mymetamodel2 ../MetaModel/RESTApi/MMRestApi.ecore"
+    base_url="https://uy1.uninet.cm/api"
+    nom="UY1 Departement Infos (api)"
+    description="&quot;Portail pédagogique de la Faculté d'Informatique de Yaoundé 1">
+  <ressource
+      nom="Res_departemantInfo"
+      description="ressource departement info">
+    <operation
+        nom="recuperer un département"
+        uri="'/departement/{departement_id}'">
+      <parametre
+          type="INT"
+          nom="departement_id"
+          description="id du departement"/>
+      <reponse
+          status="OK_200"
+          description="Informations du departement"
+          headers="Content-Type: text/html; charset=UTF-8"/>
+      <reponse
+          description="Departement non trouvée"
+          headers="Content-Type: text/html; charset=UTF-8"
+          body="Not found"/>
+    </operation>
+    <uri uri_template="'/departement/{departement_id}'"/>
+    <propriete
+        nom="nom"/>
+    <propriete
+        nom="description"/>
+  </ressource>
+  <ressource
+      nom="Re_formation"
+      description="Formation spécifique">
+    <operation
+        nom="Récupérer les informations d'une formation spécifique"
+        uri="'/formations/{formation_id}'">
+      <parametre
+          nom="formation_id"
+          description="Identifiant de la formation"/>
+      <reponse
+          status="OK_200"
+          description="Informations de la formation"
+          headers="Content-Type: text/html; charset=UTF-8"
+          body="resultat de la recherche dans un JSON.Stringify"/>
+      <reponse
+          description="Formation non trouvée"
+          headers="Content-Type: text/html; charset=UTF-8"
+          body="Not found"/>
+    </operation>
+    <operation
+        methode="POST"
+        nom="Creer une formation"
+        type="WRITE"
+        uri="'/formations/create'">
+      <reponse
+          status="Unauthorized_401"
+          description="Authorization refusé"
+          headers="Content-Type: text/html; charset=UTF-8"
+          body="Authorization refusé"/>
+      <reponse
+          status="BadRequest_400"
+          description="Echec de creation"
+          headers="Content-Type: text/html; charset=UTF-8"
+          body="Bad Request 400 Error"/>
+      <reponse
+          status="Created_201"
+          description="Creation éffectuée"
+          headers="Content-Type: text/html; charset=UTF-8"
+          body="Formation crée"/>
+    </operation>
+    <uri uri_template="'/formations/{formation_id}'"/>
+    <uri uri_template="'/formations/create'"
+        method="POST"/>
+    <propriete
+        nom="nom"/>
+    <propriete
+        nom="description"/>
+  </ressource>
+</MMRA:API>

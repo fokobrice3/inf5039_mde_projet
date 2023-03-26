@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" 
+	xmlns:xmi="http://www.omg.org/XMI" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:MMRA="mymetamodel2"  
+	xsi:schemaLocation="mymetamodel2 ../MetaModel/RESTApi/MMRestApi.ecore">
+  <MMRA:Ressource nom="DÃ©partement d'informatique" description="Site du dÃ©partement d'informatique de UY1"/>
+  <MMRA:Ressource nom="Licence Fonda " description="formation en Licence Fondamentale"/>
+  <MMRA:Ressource nom="Master Fonda" description="formation Master Fondamentale"/>
+  <MMRA:Ressource nom="analyste-programmeur" description="analyste-programmeur"/>
+  <MMRA:Ressource nom="dÃ©veloppeur web" description="dÃ©veloppeur web"/>
+  <MMRA:Ressource nom="Concepteur de solutions ERP" description="Concepteur de solutions ERP"/>
+  <MMRA:Ressource nom="Concepteur de SI" description="Concepteur de SI"/>
+  <MMRA:Ressource nom="Expert Business Intelligent" description="Expert Business Intelligent"/>
+  <MMRA:Ressource nom="Prerequis" description="Raisonnement Ã©tapes par Ã©tapes"/>
+  <MMRA:Ressource nom="Prerequis" description="Analyse fonctionelle et non fonctionelle des besoins"/>
+  <MMRA:Ressource nom="Prerequis" description="connaitre les structure algorithmiques de bases"/>
+  <MMRA:Ressource nom="Prerequis" description="connaitre les heuristiques"/>
+  <MMRA:Ressource nom="Prerequis" description="manipuler les BD relationelle"/>
+  <MMRA:Ressource nom="Prerequis" description="connaitre les SI"/>
+  <MMRA:Ressource nom="Prerequis" description="savoir faire une recherche en ligne"/>
+  <MMRA:Ressource nom="Prerequis" description="Maitrise Outils developpement Eclipse"/>
+  <MMRA:Ressource nom="Prerequis" description="Maitrise UML"/>
+  <MMRA:Ressource nom="L1" description="Niveau 1 en Informatique Fonda"/>
+  <MMRA:Ressource nom="L2" description="Niveau 3 en Informatique Fonda"/>
+  <MMRA:Ressource nom="L3" description="Niveau 3 en Informatique Fonda"/>
+  <MMRA:Ressource nom="M1" description="Niveau 4  en Informatique Fonda"/>
+  <MMRA:Ressource nom="M2" description="Niveau 5 en Informatique Fonda"/>
+</xmi:XMI>

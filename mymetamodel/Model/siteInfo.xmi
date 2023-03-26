@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mymm:Departement
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mymm="mymetamodel1"
+    xsi:schemaLocation="mymetamodel1 ../MetaModel/LangageWebsite/mymetamodel.ecore"
+    nom="Département d'informatique"
+    description="Site du département d'informatique de UY1"
+    chef="//@responsable.6">
+  <formation
+      nom="Licence Fonda "
+      description="formation en Licence Fondamentale"
+      responsable="//@responsable.0 //@responsable.4 //@responsable.6 //@responsable.7">
+    <niveau
+        numero="1"
+        nom="L1"
+        description="Niveau 1 en Informatique Fonda"
+        responsable="//@responsable.4">
+      <semestre
+          numero="1"
+          description="S1-L1"
+          dateDebut="2022-09-01T00:00:00.000+0100"
+          dateFin="2023-02-20T00:00:00.000+0100"
+          nbSemaine="18">
+        <semainier
+            numero="1"
+            dateDebut="2022-09-01T00:00:00.000+0100"
+            dateFin="2023-02-20T00:00:00.000+0100"
+            contenu="Semanier S1-L1 Licence Fondamentale">
+          <programmation
+              jour="Mercredi"
+              heureDebut="12"
+              heureFin="14"
+              salle="A250 Mercredi 12h-14h"
+              responsable="//@responsable.0"/>
+        </semainier>
+        <ue
+            nom="Algortihmique"
+            code="INF1019"
+            credit="4"
+            description="Algortihmique"
+            objectif="Introduction à l'algorithmique"
+            semainier="//@formation.0/@niveau.0/@semestre.0/@semainier.0"
+            programmation="//@formation.0/@niveau.0/@semestre.0/@semainier.0/@programmation.0"
+            responsable="//@responsable.0">
+          <prerequis
+              description="Raisonnement étapes par étapes"/>
+        </ue>
+      </semestre>
+      <semestre
+          numero="2"
+          description="S2-L1"
+          dateDebut="2023-03-01T00:00:00.000+0100"
+          dateFin="2023-06-30T00:00:00.000+0100"
+          nbSemaine="12">
+        <semainier
+            numero="2"
+            dateDebut="2023-03-01T00:00:00.000+0100"
+            dateFin="2023-06-30T00:00:00.000+0100"
+            contenu="Semanier S2-L1 Licence Fondamentale">
+          <programmation
+              jour="Mardi"
+              heureDebut="16"
+              heureFin="18"
+              salle="A250 Mardi 16h-18h"
+              responsable="//@responsable.4"/>
+        </semainier>
+        <ue
+            nom="web design"
+            code="INF1049"
+            credit="4"
+            description="web design"
+            semainier="//@formation.0/@niveau.0/@semestre.1/@semainier.0"
+            programmation="//@formation.0/@niveau.0/@semestre.1/@semainier.0/@programmation.0"
+            responsable="//@responsable.4">
+          <prerequis
+              description="Analyse fonctionelle et non fonctionelle des besoins"/>
+        </ue>
+      </semestre>
+    </niveau>
+    <niveau
+        numero="2"
+        nom="L2"
+        description="Niveau 3 en Informatique Fonda"
+        responsable="//@responsable.6">
+      <semestre
+          numero="1"
+          description="S1-L2"
+          dateDebut="2022-09-01T00:00:00.000+0100"
+          dateFin="2023-02-20T00:00:00.000+0100"
+          nbSemaine="18">
+        <semainier
+            numero="1"
+            dateDebut="2022-09-01T00:00:00.000+0100"
+            dateFin="2023-02-10T00:00:00.000+0100"
+            contenu="Semanier S1-L2 Licence Fondamentale">
+          <programmation
+              heureDebut="8"
+              heureFin="10"
+              salle="A250 Lundi 8h-10h"
+              responsable="//@responsable.4"/>
+        </semainier>
+        <ue
+            nom="Object-Oriented Programming (OOP)"
+            code="INF2112"
+            credit="4"
+            description="Object-Oriented Programming (OOP)"
+            objectif="programmation orienté Objet"
+            semainier="//@formation.0/@niveau.1/@semestre.0/@semainier.0"
+            programmation="//@formation.0/@niveau.1/@semestre.0/@semainier.0/@programmation.0"
+            responsable="//@responsable.4"/>
+      </semestre>
+      <semestre
+          numero="2"
+          description="S2-L2"
+          dateDebut="2023-03-01T00:00:00.000+0100"
+          dateFin="2023-06-30T00:00:00.000+0100"
+          nbSemaine="12">
+        <semainier
+            numero="2"
+            dateDebut="2023-03-01T00:00:00.000+0100"
+            dateFin="2023-06-20T00:00:00.000+0100"
+            contenu="Semanier S2-L2 Licence Fondamentale">
+          <programmation
+              heureDebut="14"
+              heureFin="16"
+              salle="A250 Lundi 14h-16h"
+              responsable="//@responsable.7"/>
+        </semainier>
+        <ue
+            nom="Système transactionelle (SGBDR)"
+            code="INF2019"
+            credit="3"
+            description="SGBDR"
+            semainier="//@formation.0/@niveau.1/@semestre.1/@semainier.0"
+            programmation="//@formation.0/@niveau.1/@semestre.1/@semainier.0/@programmation.0"
+            responsable="//@responsable.7"/>
+      </semestre>
+    </niveau>
+    <niveau
+        numero="3"
+        nom="L3"
+        description="Niveau 3 en Informatique Fonda"
+        responsable="//@responsable.0">
+      <semestre
+          numero="1"
+          description="S1-L3"
+          dateDebut="2022-09-01T00:00:00.000+0100"
+          dateFin="2023-02-20T00:00:00.000+0100"
+          nbSemaine="18">
+        <semainier
+            numero="1"
+            dateDebut="2022-09-10T00:00:00.000+0100"
+            dateFin="2023-02-10T00:00:00.000+0100"
+            contenu="Semanier S1-L3 Licence Fondamentale">
+          <programmation
+              heureDebut="15"
+              heureFin="17"
+              salle="A250 Mercredi 15h-17h"
+              responsable="//@responsable.6"/>
+        </semainier>
+        <ue
+            nom="Système d'exploitation (SE)"
+            code="INF3074"
+            credit="4"
+            description="Système d'exploitation"
+            semainier="//@formation.0/@niveau.2/@semestre.0/@semainier.0"
+            programmation="//@formation.0/@niveau.2/@semestre.0/@semainier.0/@programmation.0"
+            responsable="//@responsable.6"/>
+      </semestre>
+      <semestre
+          numero="2"
+          description="S2-L3"
+          dateDebut="2023-03-01T00:00:00.000+0100"
+          dateFin="2023-06-30T00:00:00.000+0100"
+          nbSemaine="12">
+        <semainier
+            numero="6"
+            dateDebut="2023-03-10T00:00:00.000+0100"
+            dateFin="2023-06-01T00:00:00.000+0100"
+            contenu="Semanier S2-L3 Licence Fondamentale">
+          <programmation
+              jour="Samedi"
+              heureDebut="10"
+              heureFin="12"
+              salle="A250 Samedi 10h-12h"
+              responsable="//@responsable.7"/>
+        </semainier>
+        <ue
+            nom=" Bases de données relationnelles "
+            code="INF2019"
+            credit="5"
+            description=" Bases de données relationnelles "
+            semainier="//@formation.0/@niveau.2/@semestre.1/@semainier.0"
+            programmation="//@formation.0/@niveau.2/@semestre.1/@semainier.0/@programmation.0"
+            responsable="//@responsable.7"/>
+      </semestre>
+    </niveau>
+    <debouche
+        nom="analyste-programmeur"
+        description="analyste-programmeur"/>
+    <debouche
+        nom="développeur web"
+        description="développeur web"/>
+  </formation>
+  <formation
+      nom="Master Fonda"
+      description="formation Master Fondamentale"
+      responsable="//@responsable.5 //@responsable.0 //@responsable.1 //@responsable.2 //@responsable.3 //@responsable.4 //@responsable.7">
+    <niveau
+        numero="1"
+        nom="M1"
+        description="Niveau 4  en Informatique Fonda"
+        responsable="//@responsable.0"
+        specialite="//@formation.1/@specialite.0 //@formation.1/@specialite.1">
+      <semestre
+          numero="1"
+          description="S1-M1"
+          dateDebut="2022-10-01T00:00:00.000+0100"
+          dateFin="2023-02-20T00:00:00.000+0100"
+          nbSemaine="20">
+        <semainier
+            numero="2"
+            dateDebut="2022-10-03T00:00:00.000+0100"
+            dateFin="2023-02-10T00:00:00.000+0100"
+            contenu="Semanier S1-M1 Master Fonda">
+          <programmation
+              jour="Jeudi"
+              heureDebut="10"
+              heureFin="12"
+              salle="S107 Jeudi 10h-12h"
+              responsable="//@responsable.0"/>
+        </semainier>
+        <ue
+            nom="Algorithmique avancée"
+            code="INF4019"
+            credit="6"
+            description="Algorithmique"
+            objectif="algoriithme avancée"
+            semainier="//@formation.1/@niveau.0/@semestre.0/@semainier.0"
+            programmation="//@formation.1/@niveau.0/@semestre.0/@semainier.0/@programmation.0"
+            responsable="//@responsable.0"/>
+      </semestre>
+      <semestre
+          numero="2"
+          description="S2-M1"
+          dateDebut="2023-03-01T00:00:00.000+0100"
+          dateFin="2023-06-30T00:00:00.000+0100"
+          nbSemaine="20">
+        <semainier
+            numero="3"
+            dateDebut="2023-03-03T00:00:00.000+0100"
+            dateFin="2023-06-10T00:00:00.000+0100"
+            contenu="Semainier S2-M1 Master fonda">
+          <programmation
+              jour="Vendredi"
+              heureDebut="8"
+              heureFin="10"
+              salle="S107 Vendredi 8h-10h"
+              responsable="//@responsable.5"/>
+        </semainier>
+        <ue
+            nom="Compilation"
+            code="INF4059"
+            credit="6"
+            description="Compilation"
+            objectif="apprendre la compilation"
+            semainier="//@formation.1/@niveau.0/@semestre.1/@semainier.0"
+            programmation="//@formation.1/@niveau.0/@semestre.1/@semainier.0/@programmation.0"
+            responsable="//@responsable.5"/>
+      </semestre>
+    </niveau>
+    <niveau
+        numero="2"
+        nom="M2"
+        description="Niveau 5 en Informatique Fonda"
+        responsable="//@responsable.7"
+        specialite="//@formation.1/@specialite.0 //@formation.1/@specialite.1">
+      <semestre
+          numero="1"
+          description="S1-M2"
+          dateDebut="2022-10-03T00:00:00.000+0100"
+          dateFin="2023-04-03T00:00:00.000+0100"
+          nbSemaine="24">
+        <semainier
+            numero="1"
+            dateDebut="2022-10-10T00:00:00.000+0100"
+            dateFin="2023-04-01T00:00:00.000+0100"
+            contenu="semainier M2 avec les programmations des UEs de la filière Geni logiciel">
+          <programmation
+              jour="Jeudi"
+              heureDebut="8"
+              heureFin="10"
+              salle="S006 Jeudi 8h-10h"
+              responsable="//@responsable.2"/>
+          <programmation
+              heureDebut="10"
+              heureFin="12"
+              salle="S006 Lundi 10h-12h"
+              responsable="//@responsable.3"/>
+          <programmation
+              heureDebut="16"
+              heureFin="18"
+              salle="S006 Lundi 16h-18h"
+              responsable="//@responsable.4"/>
+          <programmation
+              jour="Mercredi"
+              heureDebut="10"
+              heureFin="12"
+              salle="S008 Mercredi 10h-12h"/>
+          <programmation
+              jour="Jeudi"
+              heureDebut="16"
+              heureFin="19"
+              salle="S107 Jeudi 16h-19h"
+              responsable="//@responsable.5"/>
+        </semainier>
+        <semainier
+            numero="2"
+            dateDebut="2022-10-10T00:00:00.000+0100"
+            dateFin="2023-04-01T00:00:00.000+0100"
+            contenu="Semanier M2 avec les programmations des UEs de la filière science de données">
+          <programmation
+              heureDebut="8"
+              heureFin="10"
+              salle="S008 Lundi 8h-10h"
+              responsable="//@responsable.1"/>
+          <programmation
+              heureDebut="12"
+              heureFin="14"
+              salle="S008 Lundi 12h-14h"/>
+          <programmation
+              heureDebut="16"
+              heureFin="19"
+              salle="S008 Lundi 16h-19h"
+              responsable="//@responsable.0"/>
+          <programmation
+              jour="Mardi"
+              heureDebut="8"
+              heureFin="10"
+              salle="S006 Lundi  8h-10h"/>
+        </semainier>
+        <ue
+            nom="Fouille de donnée"
+            code="INF5079"
+            credit="5"
+            description="Ue Datascience pour la fouille de donnée"
+            objectif="Fouille des sources de données ( DataMining)"
+            semainier="//@formation.1/@niveau.1/@semestre.0/@semainier.1"
+            programmation="//@formation.1/@niveau.1/@semestre.0/@semainier.0/@programmation.2"
+            specialite="//@formation.1/@specialite.0"
+            isOptionel="true"
+            responsable="//@responsable.4">
+          <prerequis
+              description="connaitre les structure algorithmiques de bases"/>
+        </ue>
+        <ue
+            nom="Search-Based Software Engineering"
+            code="INF5049"
+            credit="5"
+            description="approches metaheuristique pour la resolution des problemes du software engineering"
+            objectif="ameliorer les approches de developpement logiciel grâce aux métaheuristiques"
+            semainier="//@formation.1/@niveau.1/@semestre.0/@semainier.0"
+            programmation="//@formation.1/@niveau.1/@semestre.0/@semainier.0/@programmation.1"
+            specialite="//@formation.1/@specialite.1"
+            isOptionel="true"
+            responsable="//@responsable.3">
+          <prerequis
+              description="connaitre les heuristiques"/>
+        </ue>
+        <ue
+            nom="Big Data"
+            code="INF4019"
+            credit="5"
+            description="Big Data"
+            objectif="Familliarisation aux Big Data"
+            semainier="//@formation.1/@niveau.1/@semestre.0/@semainier.1"
+            programmation="//@formation.1/@niveau.1/@semestre.0/@semainier.1/@programmation.2"
+            specialite="//@formation.1/@specialite.0"
+            isOptionel="true"
+            responsable="//@responsable.0">
+          <prerequis
+              description="manipuler les BD relationelle"/>
+        </ue>
+        <ue
+            nom="Buisiness Intelligent (BI)"
+            code="INF5089"
+            credit="5"
+            description="Buisiness Intelligent"
+            objectif="applications du DATAmining pour l'améliroation des prises de decisions en entreprise"
+            semainier="//@formation.1/@niveau.1/@semestre.0/@semainier.1"
+            programmation="//@formation.1/@niveau.1/@semestre.0/@semainier.1/@programmation.0"
+            specialite="//@formation.1/@specialite.0"
+            isOptionel="true"
+            responsable="//@responsable.1">
+          <prerequis
+              description="connaitre les SI"/>
+        </ue>
+        <ue
+            nom="Methodologie de recherche scientique"
+            code="INF5019"
+            credit="5"
+            description="Veille scientifique et technologique"
+            objectif="Se familliariser avec les Methodologies de recherche scientique"
+            semainier="//@formation.1/@niveau.1/@semestre.0/@semainier.0"
+            programmation="//@formation.1/@niveau.1/@semestre.0/@semainier.0/@programmation.0"
+            specialite="//@formation.1/@specialite.1"
+            responsable="//@responsable.2">
+          <prerequis
+              description="savoir faire une recherche en ligne"/>
+          <ressource
+              nom="Slide Veille scientifique et technologique"
+              type="slide"
+              chemin="http://univ-virtuelle/info/veille_scientifique.pdf"/>
+        </ue>
+        <ue
+            nom="Ingénierie Dirigée par le Modèles (IDM)"
+            code="5039"
+            credit="5"
+            description="Introduction à l'IDM, Contraintes OCL, Metamodelisation, Transformation EMF"
+            objectif="Passer d’une vision contemplative des modèles à une vision réellement productive"
+            semainier="//@formation.1/@niveau.1/@semestre.0/@semainier.0"
+            programmation="//@formation.1/@niveau.1/@semestre.0/@semainier.0/@programmation.4"
+            specialite="//@formation.1/@specialite.1"
+            isOptionel="true"
+            responsable="//@responsable.5">
+          <prerequis
+              description="Maitrise Outils developpement Eclipse"/>
+          <prerequis
+              description="Maitrise UML"/>
+          <ressource
+              nom="Introduction à l'IDM"
+              type="pdf"
+              chemin="support1.pdf"/>
+          <ressource
+              nom="métamodelisation"
+              type="pdf"
+              chemin="support2.pdf"/>
+          <ressource
+              nom="contraintes OCL"
+              type="pdf"
+              chemin="contraintes_ocl.pdf"/>
+          <ressource
+              nom="Transformation ATL"
+              type="pdf"
+              chemin="atl.pdf"/>
+        </ue>
+      </semestre>
+    </niveau>
+    <debouche
+        nom="Concepteur de solutions ERP"
+        description="Concepteur de solutions ERP"/>
+    <debouche
+        nom="Concepteur de SI"
+        description="Concepteur de SI"/>
+    <debouche
+        nom="Expert Business Intelligent"
+        description="Expert Business Intelligent"/>
+    <specialite
+        nom="Science des données"
+        description="Science des données"
+        responsable="//@responsable.0"/>
+    <specialite
+        nom="Génie Logiciel"
+        description="Génie Logiciel"
+        responsable="//@responsable.2"/>
+  </formation>
+  <responsable
+      nom="Dr. Paulin"
+      telephone="699999999"
+      formation="//@formation.0 //@formation.1"
+      ue="//@formation.1/@niveau.0/@semestre.0/@ue.0"/>
+  <responsable
+      nom="Pr. Nobert"
+      telephone="620406695"
+      formation="//@formation.1"
+      ue="//@formation.1/@niveau.1/@semestre.0/@ue.3"/>
+  <responsable
+      nom="Pr. Roger"
+      formation="//@formation.1"
+      ue="//@formation.1/@niveau.1/@semestre.0/@ue.4"/>
+  <responsable
+      nom="Dr. Xaviera"
+      telephone="696969696"
+      sexe="Femme"
+      formation="//@formation.1"
+      ue="//@formation.1/@niveau.1/@semestre.0/@ue.1"/>
+  <responsable
+      nom="Dr Fidèle"
+      telephone="672425875"
+      formation="//@formation.0 //@formation.1"
+      ue="//@formation.1/@niveau.1/@semestre.0/@ue.0"/>
+  <responsable
+      nom="Dr. Valery Monthe"
+      telephone="696269400"
+      formation="//@formation.1"
+      ue="//@formation.1/@niveau.0/@semestre.1/@ue.0"/>
+  <responsable
+      nom="Dr Aminou"
+      telephone="696460458"
+      formation="//@formation.0"/>
+  <responsable
+      nom="Dr. tapamo"
+      telephone="620460458"
+      formation="//@formation.0 //@formation.1"/>
+</mymm:Departement>

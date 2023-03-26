@@ -1,4 +1,5 @@
-#Projet IDM INF5039
+##Projet IDM INF5039
+--------------------------------------------------
 
 <!-- Templates Credits : https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
@@ -16,23 +17,19 @@
 [![Forks][forks-shield]][forks-url]
 [![Issues][issues-shield]][issues-url] 
 
-<h3>Ingenierie dirigée par les modèle.</h3>
+<h3>Ingenierie dirigée par les modèles.</h3>
 
--> Langage PHP(natif) 
+-> Option 2 avec le langage PHP(natif) 
 
--> Option 2
+-> Métamodèle + OCL du langage du site
 
--> Métamodèle du langage du site
+-> Instance du langage du site
 
--> instance du langage du site
-
--> Métamodèle de la REST API
+-> Métamodèle + OCL de la REST API
 
 -> Instance de la Rest API
 
 -> Règles de transformation ATL
-
--> Génération de codes sources PHP via ATL
 
 -> Documentation 
 
@@ -46,7 +43,7 @@
  
 <h4>Instance du metamodel langage site web</h4>
   <a href="https://github.com/fokobrice3/mde_project">
-    <img src="SiteInfo_Model.png" alt="instance_site" width="480" height="auto">
+    <img src="SiteInfo_Model.png" alt="instance_site" width="380" height="auto">
   </a>
 </div>
  <div align="left">
