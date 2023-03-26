@@ -5,11 +5,12 @@ Bundle-SymbolicName: mymetamodel.edit;singleton:=true
 Automatic-Module-Name: mymetamodel.edit
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: mymetamodel.provider.MymetamodelEditPlugin$Implementation
+Bundle-Activator: MMRestApi.provider.MMRestAPiEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: mymetamodel.provider
+Export-Package: mymetamodel.provider,
+ MMRestApi.provider
 Require-Bundle: org.eclipse.core.runtime,
  mymetamodel;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport

@@ -34,4 +34,31 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated MMRestAPi -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="MMRestApi.presentation.MMRestApiModelWizardID"
+            name="%_UI_MMRestApiModelWizard_label"
+            class="MMRestApi.presentation.MMRestApiModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/MMRestApiModelFile.gif">
+         <description>%_UI_MMRestApiModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated MMRestAPi -->
+      <editor
+            id="MMRestApi.presentation.MMRestApiEditorID"
+            name="%_UI_MMRestApiEditor_label"
+            icon="icons/full/obj16/MMRestApiModelFile.gif"
+            extensions="mmrestapi"
+            class="MMRestApi.presentation.MMRestApiEditor"
+            contributorClass="MMRestApi.presentation.MMRestApiActionBarContributor">
+      </editor>
+   </extension>
 </plugin>

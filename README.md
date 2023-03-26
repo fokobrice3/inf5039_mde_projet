@@ -29,7 +29,7 @@
 
 -> Instance de la Rest API
 
--> Règles de transformation ATL
+-> Règles de transformation ATL(M2M) et Acceleo(M2T)
 
 -> Documentation 
 
