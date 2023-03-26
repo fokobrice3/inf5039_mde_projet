@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="MMRestApi" nsURI="mymetamodel2" nsPrefix="MMRA">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Ressource">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="CLASSE RESSOURCE&#xA;&#xA;nom : le nom de la ressource&#xA;URI : l'URI de la ressource&#xA;description : une description de la ressource&#xA;méthodes : les méthodes HTTP supportées par la ressource&#xA;opérations : les opérations disponibles sur la ressource"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="at_least_one_operation unique_name"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="at_least_one_operation" value="self.operation->size() >= 1"/>
+      <details key="unique_name" value="self.oclType().allInstances()->isUnique(nom)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
+        upperBound="-1" eType="#//Operation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uri" lowerBound="1" upperBound="-1"
+        eType="#//URI" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propriete" upperBound="-1"
+        eType="#//Propriete" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="props" transient="true">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="#//Propriete"/>
+      </eGenericType>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="CLASSE OPERATION&#xA;&#xA;nom : le nom de l'opération&#xA;méthode : la méthode HTTP associée à l'opération&#xA;URI : l'URI de l'opération&#xA;description : une description de l'opération&#xA;paramètres : les paramètres d'entrée de l'opération&#xA;réponses : les réponses possibles de l'opération"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="one_uri http_method_consistency read_operation_http_method uris_have_defined_variable read_not_modify have_httpMethod"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="one_uri" value="self.uri->size() = 1"/>
+      <details key="http_method_consistency" value="(self.type = OperationType::READ and (self.methode = HttpMethod::GET or self.methode = HttpMethod::HEAD)) or (self.type = OperationType::WRITE and (self.methode = HttpMethod::POST or self.methode = HttpMethod::PUT or self.methode = HttpMethod::PATCH or self.methode = HttpMethod::DELETE))"/>
+      <details key="read_operation_http_method" value="self.type &lt;> OperationType::READ or (self.methode &lt;> HttpMethod::POST and self.methode &lt;> HttpMethod::PUT and self.methode &lt;> HttpMethod::PATCH and self.methode &lt;> HttpMethod::DELETE)"/>
+      <details key="uris_have_defined_variable" value="self.uri->forAll(u | u.variable->forAll(v |u.uri_template.indexOf(v.nom) &lt;> -1))"/>
+      <details key="read_not_modify" value="self.type &lt;> OperationType::READ or self.methode &lt;> HttpMethod::POST and self.methode &lt;> HttpMethod::PUT and self.methode &lt;> HttpMethod::PATCH and self.methode &lt;> HttpMethod::DELETE"/>
+      <details key="have_httpMethod" value="not self.methode.oclIsUndefined() implies self.uri.method = self.methode"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="methode" eType="#//HttpMethod"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parametre" upperBound="-1"
+        eType="#//Parametre" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//OperationType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uri" lowerBound="1" eType="#//URI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reponse" lowerBound="1"
+        upperBound="-1" eType="#//Reponse" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="URI">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="CLASSE URI&#xA;&#xA;template : le template d'URI associé à la ressource&#xA;méthodes : les méthodes HTTP supportées par l'URI&#xA;opérations : les opérations disponibles sur l'URI&#xA;variables : les variables définies dans le template d'URI. Chaque variable a un nom, un type et une description."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uri_template" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" upperBound="-1"
+        eType="#//Parametre" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="method" eType="#//HttpMethod"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="HttpMethod">
+    <eLiterals name="GET"/>
+    <eLiterals name="POST" value="1"/>
+    <eLiterals name="PUT" value="2"/>
+    <eLiterals name="DELETE" value="3"/>
+    <eLiterals name="PATCH" value="4"/>
+    <eLiterals name="HEAD" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parametre">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DataType">
+    <eLiterals name="STRING"/>
+    <eLiterals name="INT" value="1"/>
+    <eLiterals name="CHAR" value="2"/>
+    <eLiterals name="DATE" value="3"/>
+    <eLiterals name="TIME" value="4"/>
+    <eLiterals name="DOUBLE" value="5"/>
+    <eLiterals name="BOOLEAN" value="6"/>
+    <eLiterals name="JSON_OBJECT" value="7"/>
+    <eLiterals name="TEXT" value="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OperationType">
+    <eLiterals name="READ"/>
+    <eLiterals name="WRITE" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reponse">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//HttpStatus"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="headers" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Content-Type: text/html; charset=UTF-8;"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="resultat de la reponse HTTP dans un JSON.Stringify"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="HttpStatus">
+    <eLiterals name="NotFound_404" literal="404NotFound"/>
+    <eLiterals name="OK_200" value="1"/>
+    <eLiterals name="Unauthorized_401" value="2"/>
+    <eLiterals name="Accepted_202" value="3"/>
+    <eLiterals name="Created_201" value="4"/>
+    <eLiterals name="NoContent_204" value="5"/>
+    <eLiterals name="BadRequest_400" value="6"/>
+    <eLiterals name="Forbidden_403" value="7"/>
+    <eLiterals name="RequestTimeout_408" value="8"/>
+    <eLiterals name="InternalServerError_500" value="9"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="JsonObject" instanceClassName="java.lang.Object">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Objet Json retourné par une requette&#xA;"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Propriete">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="transient"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="API">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="base_url" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ressource" upperBound="-1"
+        eType="#//Ressource" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

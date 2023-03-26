@@ -1,0 +1,65 @@
+-- @path MM=/Site2RestApi/mymetamodel.ecore
+-- @path MM1=/Site2RestApi/MMRestApi.ecore
+
+module Site2Api;
+create OUT : MM1 from IN : MM;
+
+-- Transformation des departements
+rule TransformDepartement {
+	from
+	s : MM!Departement
+	to
+	a : MM1!Ressource(		
+		nom <- s.nom,
+		description <- s.description 
+	)
+}
+
+-- Transformation des formations
+rule TransformFormation {
+	from
+	s : MM!Formation
+	to
+	a : MM1!Ressource(		
+		nom <- s.nom,
+		description <- s.description 
+	)
+}
+
+-- Transformation des debouche
+rule TransformDebouche {
+	from
+	s : MM!Debouche
+	to
+	a : MM1!Ressource(		
+		nom <- s.nom,
+		description <- s.description 
+	)
+}
+
+-- Transformation des perequis
+rule TransformPrerequis {
+	from
+	s : MM!prerequis
+	to
+	a : MM1!Ressource(
+		nom <- 'Prerequis',
+		description <- s.description 
+	)
+}
+
+-- Transformation des Niveau
+rule TransformNiveau {
+	from
+	s : MM!Niveau
+	to
+	a : MM1!Ressource(		
+		nom <- s.nom,
+		description <- s.description
+	)
+}
+
+
+
+
+

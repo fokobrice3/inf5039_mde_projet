@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/mymetamodel/src" modelPluginID="mymetamodel" modelName="MMRestAPi"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>MMRestApi.ecore</foreignModel>
+  <genPackages prefix="MMRestApi" disposableProviderFactory="true" ecorePackage="MMRestApi.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MMRestApi.ecore#//HttpMethod">
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//HttpMethod/GET"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//HttpMethod/POST"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//HttpMethod/PUT"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//HttpMethod/DELETE"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//HttpMethod/PATCH"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//HttpMethod/HEAD"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MMRestApi.ecore#//DataType">
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//DataType/STRING"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//DataType/INT"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//DataType/CHAR"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//DataType/DATE"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//DataType/TIME"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//DataType/DOUBLE"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//DataType/BOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//DataType/JSON_OBJECT"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//DataType/TEXT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MMRestApi.ecore#//OperationType">
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//OperationType/READ"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//OperationType/WRITE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MMRestApi.ecore#//HttpStatus">
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//HttpStatus/NotFound_404"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//HttpStatus/OK_200"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//HttpStatus/Unauthorized_401"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//HttpStatus/Accepted_202"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//HttpStatus/Created_201"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//HttpStatus/NoContent_204"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//HttpStatus/BadRequest_400"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//HttpStatus/Forbidden_403"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//HttpStatus/RequestTimeout_408"/>
+      <genEnumLiterals ecoreEnumLiteral="MMRestApi.ecore#//HttpStatus/InternalServerError_500"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="MMRestApi.ecore#//JsonObject"/>
+    <genClasses ecoreClass="MMRestApi.ecore#//Ressource">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MMRestApi.ecore#//Ressource/operation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMRestApi.ecore#//Ressource/nom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMRestApi.ecore#//Ressource/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MMRestApi.ecore#//Ressource/uri"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MMRestApi.ecore#//Ressource/propriete"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMRestApi.ecore#//Ressource/props"/>
+    </genClasses>
+    <genClasses ecoreClass="MMRestApi.ecore#//Operation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMRestApi.ecore#//Operation/methode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMRestApi.ecore#//Operation/nom"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MMRestApi.ecore#//Operation/parametre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMRestApi.ecore#//Operation/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MMRestApi.ecore#//Operation/uri"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MMRestApi.ecore#//Operation/reponse"/>
+    </genClasses>
+    <genClasses ecoreClass="MMRestApi.ecore#//URI">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMRestApi.ecore#//URI/uri_template"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MMRestApi.ecore#//URI/variable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMRestApi.ecore#//URI/method"/>
+    </genClasses>
+    <genClasses ecoreClass="MMRestApi.ecore#//Parametre">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMRestApi.ecore#//Parametre/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMRestApi.ecore#//Parametre/nom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMRestApi.ecore#//Parametre/description"/>
+    </genClasses>
+    <genClasses ecoreClass="MMRestApi.ecore#//Reponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMRestApi.ecore#//Reponse/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMRestApi.ecore#//Reponse/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMRestApi.ecore#//Reponse/headers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMRestApi.ecore#//Reponse/body"/>
+    </genClasses>
+    <genClasses ecoreClass="MMRestApi.ecore#//Propriete">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMRestApi.ecore#//Propriete/nom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMRestApi.ecore#//Propriete/type"/>
+    </genClasses>
+    <genClasses ecoreClass="MMRestApi.ecore#//API">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMRestApi.ecore#//API/base_url"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMRestApi.ecore#//API/nom"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MMRestApi.ecore#//API/ressource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MMRestApi.ecore#//API/description"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
